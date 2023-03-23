@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template information：
+% Template name: Ernie Cheng-Xiang Zhuang - CV
+% Version: 1.0 (2023.03.21)
+% Editor: 莊程翔 Ernie Cheng-Xiang Zhuang
+% Complier: XeLaTeX
+%
+% Original Template Information:
+% Template name: Wilson Resume/CV
+% Authors: 1. Howard Wilson (https://github.com/watsonbox/cv_template_2004)
+%          2. Vel (vel@latextemplates.com)
+% Complier: XeLaTeX
+% License: CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% Download link: http://www.latextemplates.com/template/wilson-resume-cv
+%
+% The purpose of making this template:
+% Ernie Zhuang has already made extensive modifications to the Resume/CV made by Howard Wilson and Vel, and provided easily understood comments for LaTeX beginners, so you can effortlessly write a neat and professional-looking CV.
+% If you have any questions, you can contact me by:
+% 1. Website: https://www.ernie-zhuang.com/contact
+% 2. Email: erniezhuang1127@gmail.com
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	Packages and Document Configurations
+%----------------------------------------------------------------------------------------
+
+% Use A4 paper and set left, right, top and bottom margins
+\usepackage[a4paper, left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm]{geometry} 
+
+% Colors for links
+\usepackage[colorlinks, bookmarks = false]{hyperref}
+
+%% Set colors for links
+\hypersetup{
+	linkcolor = red,
+	citecolor = blue,
+	filecolor = blue,
+	urlcolor = blue
+} 
+
+% Suppress section numbering
+\setcounter{secnumdepth}{0} 
+
+% Output font encoding by Type 1
+\usepackage[T1]{fontenc} 
+
+% Specification of custom fonts
+\usepackage{fontspec} 
+
+%% Specified font
+\setmainfont[Path = fonts/,
+Extension = .otf,
+BoldFont = Erewhon-Bold,
+ItalicFont = Erewhon-Italic,
+BoldItalicFont = Erewhon-BoldItalic,
+SmallCapsFeatures = {Letters = SmallCaps}
+]{Erewhon-Regular}
+
+% Required for custom colors
+\usepackage{color} 
+
+%% Color section titles
+\definecolor{Myblue}{RGB}{57,108,144}
+
+% Allows customization of titles
+\usepackage{sectsty}
+
+%% Color section titles
+\sectionfont{\color{Myblue}} 
+
+% Stop paragraph indentation
+\setlength\parindent{0pt} 
+
+% Non-indenting itemize
+\newenvironment{itemize-noindent}
+{\setlength{\leftmargini}{0em}\begin{itemize}}
+{\end{itemize}}
+
+% Custom square bullet point definition
+\newcommand{\sqbullet}{~\vrule height 1ex width .8ex depth -.2ex} 
+
+% Commenting out large sections
+\usepackage{comment}
+
+%----------------------------------------------------------------------------------------
+%	Main Header
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\title}[1]{
+{\huge{\color{Myblue}\textbf{#1}}}\\ % Header section name and color
+\rule{\textwidth}{0.5mm}\\ % Rule under the header
+}
+
+%----------------------------------------------------------------------------------------
+%	Interests
+%-----------------------------------------------------------------------------------------
+
+\newcommand{\interests}[1]{
+\begin{tabbing}
+\hspace{5mm} \= \kill
+#1
+\end{tabbing}
+\vspace{-10mm}
+}
+
+\newcommand{\interest}[1]{\sqbullet \> #1\\[3pt]} % Define the item name
+
+%----------------------------------------------------------------------------------------
+%	Skills
+%----------------------------------------------------------------------------------------
+
+\newcommand{\skills}[2]{
+\begin{tabbing}
+\hspace{5mm} \= \kill
+\sqbullet \>\+ \textbf{#1} \\
+\begin{minipage}{\textwidth}
+\vspace{2mm}
+#2
+\end{minipage}
+\end{tabbing}
+}
+
+%----------------------------------------------------------------------------------------
+%	Work in Progress
+%----------------------------------------------------------------------------------------
+
+\newcommand{\Progress}[1]{
+\begin{tabbing}
+\hspace{5mm} \= \kill
+\sqbullet \>\+ 
+\begin{minipage}[t]{15.42cm} % 21(width of A4) - 2.54(left & right margin)*2 - 0.5(item)
+#1
+\end{minipage}
+\end{tabbing}
+}
+
+
+%----------------------------------------------------------------------------------------
+%	Tabbed Block
+%----------------------------------------------------------------------------------------
+
+\newcommand{\tabbedblock}[2]{
+\begin{tabbing}
+\hspace{3.92cm} \= \kill
+{\bf#1}\> 
+\begin{minipage}[t]{12cm} % 21(width of A4) - 2.54(left & right margin)*2 - 3.92(time box)
+#2
+\end{minipage}
+\end{tabbing}
+}
+
+%----------------------------------------------------------------------------------------
+%	Update Information
+%----------------------------------------------------------------------------------------
+
+\newcommand{\update}[1]
+{\raggedleft
+\par \vfill \noindent {\small #1 (\today)}
+}
